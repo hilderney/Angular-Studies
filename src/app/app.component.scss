@@ -1,0 +1,30 @@
+mat-sidenav-container {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+mat-sidenav{
+  width: 30%;
+  background-color: red;
+}
+
+mat-grid-tile {
+  background: lightblue;
+}
+
+button {
+  margin:7px;
+}
+
+button:first-child {
+  margin-left:0px;
+}
+
+button:last-child {
+  margin-right:0px;
+}
+
+

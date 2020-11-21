@@ -1,0 +1,11 @@
+$frontend-test-dark-primary: mat-palette($mat-cyan);
+$frontend-test-dark-accent: mat-palette($mat-pink, 800, 700, 900);
+$frontend-test-dark-warn: mat-palette($mat-red);
+
+$frontend-test-dark-theme: mat-dark-theme((
+  color: (
+    primary: $frontend-test-dark-primary,
+    accent: $frontend-test-dark-accent,
+    warn: $frontend-test-dark-warn,
+  )
+));

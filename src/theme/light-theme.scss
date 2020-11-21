@@ -1,0 +1,11 @@
+$frontend-test-light-primary: mat-palette($mat-cyan);
+$frontend-test-light-accent: mat-palette($mat-teal, 800, 700, 900);
+$frontend-test-light-warn: mat-palette($mat-red);
+
+$frontend-test-light-theme: mat-light-theme((
+  color: (
+    primary: $frontend-test-light-primary,
+    accent: $frontend-test-light-accent,
+    warn: $frontend-test-light-warn,
+  )
+));
