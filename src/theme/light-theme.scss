@@ -9,3 +9,7 @@ $frontend-test-light-theme: mat-light-theme((
     warn: $frontend-test-light-warn,
   )
 ));
+
+.light-theme {
+  @include angular-material-theme($frontend-test-light-theme);
+}

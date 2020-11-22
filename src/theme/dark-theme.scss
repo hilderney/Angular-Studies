@@ -9,3 +9,7 @@ $frontend-test-dark-theme: mat-dark-theme((
     warn: $frontend-test-dark-warn,
   )
 ));
+
+.dark-theme {
+  @include angular-material-theme($frontend-test-dark-theme);
+}

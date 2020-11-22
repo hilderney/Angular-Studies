@@ -1,29 +1,19 @@
 
-  <mat-sidenav-container class="example-container">
+  <mat-sidenav-container class="example-container dark-theme">
     <mat-sidenav mode="side" opened>
       SideNav
     </mat-sidenav>
     <mat-sidenav-content>
-      <mat-card>
-        <mat-card-title>
-          Teste Titulo
-        </mat-card-title>
-        <mat-card-content>
-          <form class="example-form">
-            <mat-form-field class="example-full-width">
-              <mat-label>Favorite food</mat-label>
-              <input matInput placeholder="Ex. Pizza" value="Sushi">
-            </mat-form-field>
+      <div class="container">
+        <div class="main-content">
+          <app-form-field></app-form-field>
+          <app-result-field></app-result-field>
+          <app-contact-field></app-contact-field>
+          <app-social-field></app-social-field>
+        </div>
+        <div class="right-sidebar">
 
-            <mat-form-field class="example-full-width">
-              <mat-label>Leave a comment</mat-label>
-              <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-            </mat-form-field>
-          </form>
-          <button mat-button color="primary">Primary</button>
-          <button mat-button color="accent">Accent</button>
-          <button mat-button color="warn">Warn</button>
-        </mat-card-content>
-      </mat-card>
+        </div>
+      </div>
     </mat-sidenav-content>
   </mat-sidenav-container>

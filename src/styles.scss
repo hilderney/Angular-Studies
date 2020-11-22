@@ -9,21 +9,25 @@
 // Be sure that you only ever include this mixin once!
 @include mat-core();
 
-
-@import './theme/light-theme.scss';
 @import './theme/dark-theme.scss';
-
-
-.light-theme {
-  @include angular-material-theme($frontend-test-light-theme);
-}
-
-
-.dark-theme {
-  @include angular-material-theme($frontend-test-dark-theme);
-}
+@import './theme/light-theme.scss';
 
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+app-form-field, app-result-field {
+  display: inline-flex;
+  width: 100%;
+  max-width: 800px;
+  min-width: 425px;
+  border: 1px solid red ;
+}
+app-contact-field, app-social-field {
+  display: inline-flex;
+  width: 100%;
+  max-width: 400px;
+  min-width: 425px;
+  border: 1px solid red ;
+}
