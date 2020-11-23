@@ -11,6 +11,7 @@ import { ContactFieldComponent } from './components/contact-field/contact-field.
 import { SocialFieldComponent } from './components/social-field/social-field.component';
 import { RightFieldComponent } from './components/right-field/right-field.component';
 import { MaterialModule } from './core/material/material.module';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { MaterialModule } from './core/material/material.module';
     FormFieldComponent,
     ContactFieldComponent,
     SocialFieldComponent,
-    RightFieldComponent
+    RightFieldComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

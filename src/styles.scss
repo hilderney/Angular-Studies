@@ -1,4 +1,3 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
@@ -22,55 +21,13 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-app-root {
-  width: 100vw;
-}
-
-mat-sidenav {
-  height: 100vh;
-  width: 250px !important;
-  max-width: 250px !important;
-}
-
-mat-sidenav-content {
-  height: auto !important;
-  max-height: 100vh;
-  overflow: auto;
-}
-
 .left-label {
   display: flex;
   margin: 7px 4px;
 }
 
-button {
-  bottom: 6px;
-}
-
-.dark-theme .mat-input-element {
-  caret-color: transparent !important;
-  border-color: transparent !important;
-  color: transparent !important;
-}
-
-
-app-right-field {
-  height: 100%;
-}
-
 mat-card {
-  margin: 15px;
+  margin: 12px;
+  padding: 24px  !important;
   min-height: auto !important;
-}
-
-app-form-field mat-card {
-  min-height: 130px;
-}
-
-app-contact-field, app-social-field {
-  min-height: 280px;
-}
-
-app-contact-field, app-social-field {
-
 }

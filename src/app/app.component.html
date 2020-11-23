@@ -4,11 +4,11 @@
 
   <mat-sidenav-container class="container">
     <mat-sidenav mode="side" fxHide.xs opened>
-      SideNav
+      <app-navbar></app-navbar>
     </mat-sidenav>
     <mat-sidenav-content fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
 
-      <div fxLayout="column" fxFlex="80%" fxFlex.xs="100%" fxFlex.sm="100%">
+      <div fxLayout="column" fxFlex="830px" fxFlex.xs="100%" fxFlex.sm="100%">
         <app-form-field></app-form-field>
         <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex.xs="100%" fxFlex.sm="100%">
           <app-contact-field class="w-100"></app-contact-field>
@@ -16,7 +16,7 @@
         </div>
       </div>
 
-      <div fxFlex="20%" fxFlex.xs="100%" fxFlex.sm="100%">
+      <div fxFlex="262px" fxFlex.xs="100%" fxFlex.sm="100%">
         <app-right-field></app-right-field>
       </div>
     </mat-sidenav-content>

@@ -24,7 +24,17 @@ $frontend-test-dark-theme: mat-dark-theme((
 .dark-theme .mat-icon-button,
 .dark-theme .mat-stroked-button {
   color: #e4e4e4;
+
+}
+
+.dark-theme.content-wrapper,
+.dark-theme .mat-form-field-flex {
   background-color: #292929 !important;
+}
+
+.dark-theme .mat-button,
+.dark-theme .mat-icon-button {
+  background-color: transparent !important;
 }
 
 .dark-theme mat-card,
@@ -55,5 +65,10 @@ $frontend-test-dark-theme: mat-dark-theme((
 
 .dark-theme .mat-form-field {
   border-color: transparent !important;
+}
+
+.mat-form-field-underline::before,
+.mat-form-field-underline::after {
+  background-color: transparent !important;
 }
 

@@ -57,4 +57,12 @@ export class FormFieldComponent implements OnInit {
     }
   }
 
+  combineNumbers() {
+    console.log('Combinar Numeros');
+  }
+
+  clearNumbers() {
+    console.log('Limpar Numeros');
+  }
+
 }

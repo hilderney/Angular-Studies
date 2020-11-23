@@ -7,33 +7,44 @@
     <mat-card-content>
 
       <div class="row">
-        <div class="col-12 col-sm-4 col-md-3" >
+
+        <div class="col-12 col-sm-3 col-lg-2" >
           <span class="left-label"> Sequência: </span>
         </div> <!-- ./COL -->
 
-        <div class="col-12 col-sm-8 col-md-9">
+        <div class="col-12 col-sm-9 col-lg-10">
           <mat-form-field *ngFor="let item of inputs" class="input-number d-inline-flex px-2" appearance="fill">
             <mat-label> {{item.label}} </mat-label>
             <input matInput type="number">
           </mat-form-field>
 
-          <button mat-icon-button color="primary" class="px-2"
+          <button mat-icon-button color="primary" class="btn-increment px-1"
             (click)="buildNewInput()" aria-label="Add">
             <mat-icon> add </mat-icon>
           </button>
         </div> <!-- ./COL -->
-
     </div> <!-- ./ROW -->
+
     <div class="row">
-      <div class="col-12 col-sm-4 col-md-3" >
+      <div class="col-12 col-sm-3 col-lg-2" >
         <span class="left-label"> Target: </span>
       </div> <!-- ./COL -->
 
-      <div class="col-12 col-sm-8 col-md-9" >
+      <div class="col-12 col-sm-9 col-lg-10" >
         <mat-form-field class="input-number d-inline-flex px-2" appearance="fill">
           <mat-label> &nbsp; </mat-label>
           <input matInput type="number">
         </mat-form-field>
+      </div> <!-- ./COL -->
+    </div> <!-- ./ROW -->
+
+    <div class="row">
+      <div class="col-12" >
+        <div>
+          <button mat-button (click)="clearNumbers()" style="background-color: transparent;">Limpar Campos</button>
+          <button mat-flat-button (click)="combineNumbers()">Combinar</button>
+        </div>
+
       </div> <!-- ./COL -->
     </div> <!-- ./ROW -->
 

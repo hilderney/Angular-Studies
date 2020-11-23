@@ -1,30 +1,17 @@
-mat-sidenav-container {
+app-root {
+  width: 100vw;
+}
+
+app-contact-field {
   width: 100%;
+  min-height: 214px;
+}
+
+app-social-field {
+  width: 100%;
+  min-height: 214px;
+}
+
+app-right-field {
   height: 100%;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
 }
-
-mat-sidenav{
-  width: 25%;
-  background-color: red;
-}
-
-mat-grid-tile {
-  background: lightblue;
-}
-
-button {
-  margin:7px;
-}
-
-button:first-child {
-  margin-left:0px;
-}
-
-button:last-child {
-  margin-right:0px;
-}
-
-
