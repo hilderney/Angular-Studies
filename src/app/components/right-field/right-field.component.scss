@@ -1,1 +1,35 @@
+.center-center-position {
+  position: absolute;
+  bottom: 50%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
 
+.super-text {
+  font-size: 34px;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 2px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 8px !important;
+}
+
+h5 {
+  color: white;
+  font-weight: 600;
+  letter-spacing: 2px;
+  width: 100%;
+  text-align: center;
+}
+
+.img-bg {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("./../../../assets/images/imgRightSidebar.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  min-height: 282px !important;
+  max-height: 716px !important;
+}
