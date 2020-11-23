@@ -1,19 +1,25 @@
 
-  <mat-sidenav-container class="example-container dark-theme">
-    <mat-sidenav mode="side" opened>
+<div class="content-wrapper dark-theme">
+
+
+  <mat-sidenav-container class="container">
+    <mat-sidenav mode="side" fxHide.xs opened>
       SideNav
     </mat-sidenav>
-    <mat-sidenav-content>
-      <div class="container">
-        <div class="main-content">
-          <app-form-field></app-form-field>
-          <app-result-field></app-result-field>
-          <app-contact-field></app-contact-field>
-          <app-social-field></app-social-field>
-        </div>
-        <div class="right-sidebar">
+    <mat-sidenav-content fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
 
+      <div fxLayout="column" fxFlex="80%" fxFlex.xs="100%" fxFlex.sm="100%">
+        <app-form-field></app-form-field>
+        <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex.xs="100%" fxFlex.sm="100%">
+          <app-contact-field class="w-100"></app-contact-field>
+          <app-social-field class="w-100"></app-social-field>
         </div>
+      </div>
+
+      <div fxFlex="20%" fxFlex.xs="100%" fxFlex.sm="100%">
+        <app-right-field></app-right-field>
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
+
+</div>

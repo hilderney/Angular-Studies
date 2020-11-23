@@ -1,0 +1,16 @@
+// MONITOR 4k XL
+@media only screen and (min-width: 1920px) and (max-width: 4999.98px)
+{
+  mat-sidenav-container {
+    max-width: 1600px !important;
+  }
+
+  .input-number .mat-form-field-flex{
+    max-width: 170px !important;
+  }
+
+  .left-label {
+    float: right !important;
+  }
+
+}

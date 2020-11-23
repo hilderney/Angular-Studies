@@ -13,3 +13,47 @@ $frontend-test-dark-theme: mat-dark-theme((
 .dark-theme {
   @include angular-material-theme($frontend-test-dark-theme);
 }
+
+.dark-theme .mat-drawer-container {
+  background-color: transparent;
+}
+
+.dark-theme.content-wrapper,
+.dark-theme .mat-form-field-flex,
+.dark-theme .mat-button,
+.dark-theme .mat-icon-button,
+.dark-theme .mat-stroked-button {
+  color: #e4e4e4;
+  background-color: #292929 !important;
+}
+
+.dark-theme mat-card,
+.dark-theme .mat-drawer {
+  background-color: #2f2f2f !important;
+  color: #e4e4e4 !important;
+}
+
+.dark-theme .mat-button.mat-primary,
+.dark-theme .mat-icon-button.mat-primary,
+.dark-theme .mat-stroked-button.mat-primary {
+  color: #e4e4e4;
+}
+
+.dark-theme label,
+.dark-theme .mat-form-field-label-wrapper {
+  color:  #e4e4e4;
+}
+
+.dark-theme .mat-form-field.mat-focused .mat-form-field-label {
+  color:  #e4e4e4;
+}
+
+.dark-theme .mat-form-field-ripple,
+.dark-theme .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: transparent !important;
+}
+
+.dark-theme .mat-form-field {
+  border-color: transparent !important;
+}
+

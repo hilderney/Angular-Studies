@@ -1,0 +1,21 @@
+// MONITOR P MD
+@media only screen and (min-width: 960px) and (max-width: 1279.98px)
+{
+  mat-sidenav-container {
+    max-width: 100% !important;
+  }
+
+  .input-number .mat-form-field-flex{
+    min-width: 167px !important;
+    max-width: 169px !important;
+  }
+
+  .input-result .mat-form-field-flex{
+    min-width: 240px !important;
+    max-width: 245px !important;
+  }
+
+  .left-label {
+    float: right !important;
+  }
+}

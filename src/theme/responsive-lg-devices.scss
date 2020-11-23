@@ -1,0 +1,21 @@
+// MONITOR G LG
+@media only screen and (min-width: 1280px) and (max-width: 1919.98px)
+{
+  mat-sidenav-container {
+    max-width: 1200px !important;
+  }
+
+  .input-number .mat-form-field-flex{
+    min-width: 110px !important;
+    max-width: 112px !important;
+  }
+
+  .input-result .mat-form-field-flex{
+    min-width: 157px !important;
+    max-width: 158px !important;
+  }
+
+  .left-label {
+    float: right !important;
+  }
+}

@@ -1,0 +1,29 @@
+// TABLET SM
+@media only screen and (min-width: 600px) and (max-width: 959.98px)
+{
+  mat-sidenav-container {
+    max-width: 100% !important;
+  }
+
+  .input-number.mat-form-field,
+  .input-number .mat-form-field-flex,
+  .input-number .mat-form-field-wrapper,
+  .input-number .mat-form-field-infix {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .input-result.mat-form-field,
+  .input-result .mat-form-field-flex,
+  .input-result .mat-form-field-wrapper,
+  .input-result .mat-form-field-infix {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .left-label {
+    float: right !important;
+  }
+}

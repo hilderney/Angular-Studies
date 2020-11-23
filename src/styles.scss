@@ -11,29 +11,65 @@
 
 @import './theme/dark-theme.scss';
 @import './theme/light-theme.scss';
+@import './theme/responsive-mobile.scss';
+@import './theme/responsive-tablet.scss';
+@import './theme/responsive-md-devices.scss';
+@import './theme/responsive-lg-devices.scss';
+@import './theme/responsive-xl-devices.scss';
 
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-app-form-field, app-result-field {
-  display: inline-flex;
-  width: 100%;
-  max-width: 800px;
-  min-width: 425px;
-  border: 1px solid red ;
+app-root {
+  width: 100vw;
+}
+
+mat-sidenav {
+  height: 100vh;
+  width: 250px !important;
+  max-width: 250px !important;
+}
+
+mat-sidenav-content {
+  height: auto !important;
+  max-height: 100vh;
+  overflow: auto;
+}
+
+.left-label {
+  display: flex;
+  margin: 7px 4px;
+}
+
+button {
+  bottom: 6px;
+}
+
+.dark-theme .mat-input-element {
+  caret-color: transparent !important;
+  border-color: transparent !important;
+  color: transparent !important;
+}
+
+
+app-right-field {
+  height: 100%;
+}
+
+mat-card {
+  margin: 15px;
+  min-height: auto !important;
+}
+
+app-form-field mat-card {
+  min-height: 130px;
 }
 
 app-contact-field, app-social-field {
-  display: inline-flex;
-  width: 100%;
-  max-width: 400px;
-  min-width: 425px;
-  border: 1px solid red ;
+  min-height: 280px;
 }
-
-@media
 
 app-contact-field, app-social-field {
 
