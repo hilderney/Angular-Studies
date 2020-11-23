@@ -1,10 +1,31 @@
 
-<div class="content-wrapper dark-theme">
-
+<div class="content-wrapper {{themeAplied}}">
 
   <mat-sidenav-container class="container">
-    <mat-sidenav mode="side" fxHide.xs opened>
+    <mat-sidenav #sidenav mode="side"
+      [(opened)]="sidenavOpened"
+      (opened)="sidenavEvents.push('open!')"
+      (closed)="sidenavEvents.push('close!')">
       <app-navbar></app-navbar>
+
+      <div class="row">
+        <div class="col-12">
+          <mat-icon>settings_brightness</mat-icon>
+          <mat-form-field>
+            <mat-select placeholder="Trocar de Tema" (selectionChange)="updateTheme($event)">
+              <mat-option *ngFor="let item of themes" value="{{item.value}}">
+                {{item.text}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div> <!-- ./COL -->
+
+        <div class="col-12">
+          <mat-icon>account_circle</mat-icon>
+          <span> Username </span>
+        </div> <!-- ./COL -->
+      </div> <!-- ./ROW -->
+
     </mat-sidenav>
     <mat-sidenav-content fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
 
@@ -19,6 +40,7 @@
       <div fxFlex="262px" fxFlex.xs="100%" fxFlex.sm="100%">
         <app-right-field></app-right-field>
       </div>
+
     </mat-sidenav-content>
   </mat-sidenav-container>
 

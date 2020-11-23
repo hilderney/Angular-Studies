@@ -7,34 +7,49 @@ import { Subscription } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, AfterViewInit, OnDestroy{
+export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   title = 'frontend-test';
-  theme = ''
+  themes = [];
+  themeAplied: string;
+  sidenavEvents: string[] = [];
+  sidenavOpened = true;
   private mediaSub: Subscription;
 
   constructor(
     private cdRef: ChangeDetectorRef,
     private mediaObserver: MediaObserver
   ){
-
+    this.themes.push({ value: 'dark', text: 'dark-theme' });
+    this.themes.push({ value: 'light', text: 'light-theme' });
+    this.themeAplied = 'dark-theme';
   }
 
-  ngOnInit(){
+  ngOnInit(): void {
+    // tslint:disable-next-line: deprecation
     this.mediaSub = this.mediaObserver.media$.subscribe(
       (change: MediaChange) => {
         console.log(change.mqAlias);
         console.log(change.mediaQuery);
       }
-    )
-  };
+    );
+  }
 
-  ngOnDestroy(){
+  ngOnDestroy(): void {
     if (this.mediaSub) {
       this.mediaSub.unsubscribe();
     }
   }
 
-  ngAfterViewInit(){
+  ngAfterViewInit(): void {
 
+  }
+
+  updateTheme($event): void {
+    console.log($event.value);
+    if ($event.value === 'dark') {
+      this.themeAplied = 'dark-theme';
+    } else if ($event.value === 'light') {
+      this.themeAplied = 'light-theme';
+    }
   }
 }
