@@ -12,7 +12,10 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   darkTheme: boolean;
   themeAplied: string;
   sidenavEvents: string[] = [];
-  sidenavOpened = true;
+  sidenavOpened: boolean;
+  sidenavMobile: boolean;
+  sidenavStyle: string;
+  sidenavToogleBtn: boolean;
   private mediaSub: Subscription;
 
   constructor(
@@ -25,12 +28,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnInit(): void {
     // tslint:disable-next-line: deprecation
-    this.mediaSub = this.mediaObserver.media$.subscribe(
-      (change: MediaChange) => {
-        console.log(change.mqAlias);
-        console.log(change.mediaQuery);
-      }
-    );
+    this.controlSidenavBehavior();
   }
 
   ngOnDestroy(): void {
@@ -41,6 +39,26 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
 
+  }
+
+  controlSidenavBehavior(){
+    this.mediaSub = this.mediaObserver.media$.subscribe(
+      (change: MediaChange) => {
+        console.log(change.mqAlias);
+        console.log(change.mediaQuery);
+        if (change.mqAlias === 'xs' || change.mqAlias === 'sm'){
+          this.sidenavOpened = false;
+          this.sidenavMobile = true;
+          this.sidenavStyle = 'over'
+          this.sidenavToogleBtn = true;
+        } else {
+          this.sidenavOpened = true;
+          this.sidenavMobile = false;
+          this.sidenavStyle = 'side'
+          this.sidenavToogleBtn = false;
+        }
+      }
+    );
   }
 
   updateTheme(): void {

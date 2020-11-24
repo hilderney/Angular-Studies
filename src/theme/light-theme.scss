@@ -12,4 +12,114 @@ $frontend-test-light-theme: mat-light-theme((
 
 .light-theme {
   @include angular-material-theme($frontend-test-light-theme);
+
+  mat-sidenav {
+    background-color: #2F2F2F !important;
+  }
+
+  .mat-drawer-container {
+    background-color: transparent !important;
+  }
+
+  .mat-form-field-flex,
+  .mat-button,
+  .mat-icon-button,
+  .mat-stroked-button {
+    color: #e4e4e4;
+
+  }
+
+  .mat-form-field-flex {
+    background-color: #292929 !important;
+  }
+
+  .mat-button,
+  .mat-icon-button {
+    background-color: transparent !important;
+  }
+
+  mat-card {
+    background-color: #2f2f2f !important;
+    color: #e4e4e4 !important;
+  }
+
+  .mat-button.mat-primary,
+  .mat-icon-button.mat-primary,
+  .mat-stroked-button.mat-primary {
+    color: #e4e4e4;
+  }
+
+  label,
+  .mat-form-field-label-wrapper {
+    color:  #e4e4e4;
+  }
+
+  .mat-form-field.mat-focused .mat-form-field-label {
+    color:  #e4e4e4;
+  }
+
+  .mat-form-field-ripple,
+  .mat-form-field.mat-focused .mat-form-field-ripple,
+  .mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: transparent !important;
+  }
+
+  .mat-form-field {
+    border-color: transparent !important;
+  }
+
+  .mat-form-field-underline::before,
+  .mat-form-field-underline::after {
+    background-color: transparent !important;
+  }
+
+  .mat-select-panel,
+  .mat-flat-button.mat-accent,
+  .mat-raised-button.mat-accent,
+  .mat-fab.mat-accent,
+  .mat-mini-fab.mat-accent {
+    background-color: #292929 !important;
+    color:  #e4e4e4 !important;
+  }
+
+  .mat-flat-button,
+  .mat-raised-button,
+  .mat-fab,
+  .mat-mini-fab {
+
+    background-color: #ff96c7 !important;
+    color:  #292929 !important;
+  }
+
+
+  .nav-menu .nav-item {
+    background-color: transparent;
+    transition: background-color .25s ease-in-out;
+    padding-left: 32px;
+  }
+
+  .nav-menu .nav-item.active {
+    background-color: #ffb7d933;
+    transition: background-color .25s ease-in-out;
+    color: #E63A8A;
+  }
+
+  .nav-menu .nav-item:hover{
+    background-color: #ffb7d91f;
+    transition: background-color .25s ease-in-out;
+  }
+
+  .mat-drawer {
+    background-color: #2f2f2f !important;
+    color: white;
+  }
+
+  .mat-drawer-side{
+    border: none;
+  }
+}
+
+.light-theme.content-wrapper {
+  background-color: #292929;
+  color: #e4e4e4;
 }

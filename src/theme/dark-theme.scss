@@ -101,6 +101,7 @@ $frontend-test-dark-theme: mat-dark-theme((
   .nav-menu .nav-item.active {
     background-color: #ffb7d933;
     transition: background-color .25s ease-in-out;
+    color: #ff96c7;
   }
 
   .nav-menu .nav-item:hover{
