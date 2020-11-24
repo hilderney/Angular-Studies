@@ -3,6 +3,13 @@
 {
   mat-sidenav-container {
     max-width: 1600px !important;
+    min-height: 100vh;;
+  }
+
+  mat-sidenav {
+    height: 100vh;
+    min-height: 100%;
+    width: 256px !important;
   }
 
   // .input-number .mat-form-field-flex{

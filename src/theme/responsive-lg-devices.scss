@@ -3,29 +3,35 @@
 {
 
   mat-sidenav-container {
-    max-width: 1366px !important;
+    max-width: 100% !important;
     min-height: 100vh;
+    max-height: 100%;
   }
 
   mat-sidenav {
     height: 100vh;
+    min-height: 100%;
     width: 256px !important;
   }
 
   mat-sidenav-content {
     height: auto !important;
-    max-height: 100vh;
+    min-height: 100vh;
     overflow: auto;
   }
 
-
   app-form-field mat-card {
-    max-width: 800px !important;
+    max-width: 100% !important;
   }
 
   .input-number .mat-form-field-flex {
     min-width: 126px !important;
     max-width: 126px !important;
+  }
+
+  .input-result .mat-form-field-flex{
+    min-width: 157px !important;
+    max-width: 158px !important;
   }
 
   .btn-increment{
@@ -34,11 +40,6 @@
     margin-left: 12px !important;
     margin-right: 12px !important;
     bottom: 8px ;
-  }
-
-  .input-result .mat-form-field-flex{
-    min-width: 157px !important;
-    max-width: 158px !important;
   }
 
   .left-label {

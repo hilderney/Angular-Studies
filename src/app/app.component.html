@@ -1,43 +1,38 @@
 
 <div class="content-wrapper {{themeAplied}}">
 
-  <mat-sidenav-container class="container">
+  <mat-sidenav-container class="container p-0">
     <mat-sidenav #sidenav mode="side"
       [(opened)]="sidenavOpened"
       (opened)="sidenavEvents.push('open!')"
       (closed)="sidenavEvents.push('close!')">
       <app-navbar></app-navbar>
 
-      <div class="row">
-        <div class="col-12">
-          <mat-icon>settings_brightness</mat-icon>
-          <mat-form-field>
-            <mat-select placeholder="Trocar de Tema" (selectionChange)="updateTheme($event)">
-              <mat-option *ngFor="let item of themes" value="{{item.value}}">
-                {{item.text}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div> <!-- ./COL -->
-
-        <div class="col-12">
-          <mat-icon>account_circle</mat-icon>
-          <span> Username </span>
-        </div> <!-- ./COL -->
-      </div> <!-- ./ROW -->
+      <div class="to-bottom">
+          <ul class="nav-menu">
+            <li class="nav-item pl-3">
+              <mat-icon> settings_brightness </mat-icon>
+              <label (click)="updateTheme()"> Trocar de Tema </label>
+            </li>
+            <li class="nav-item pl-3">
+              <mat-icon> account_circle </mat-icon>
+              <label> Username </label>
+            </li>
+          </ul>
+      </div>
 
     </mat-sidenav>
-    <mat-sidenav-content fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
+    <mat-sidenav-content fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayout.md="column">
 
-      <div fxLayout="column" fxFlex="830px" fxFlex.xs="100%" fxFlex.sm="100%">
+      <div fxLayout="column" fxFlex="75%" fxFlex.xs="100%" fxFlex.sm="100%" fxFlex.md="100%" >
         <app-form-field></app-form-field>
-        <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex.xs="100%" fxFlex.sm="100%">
+        <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex.xs="100%" fxFlex.sm="100%" class="flex-full">
           <app-contact-field class="w-100"></app-contact-field>
           <app-social-field class="w-100"></app-social-field>
         </div>
       </div>
 
-      <div fxFlex="262px" fxFlex.xs="100%" fxFlex.sm="100%">
+      <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="100%" fxFlex.md="100%">
         <app-right-field></app-right-field>
       </div>
 

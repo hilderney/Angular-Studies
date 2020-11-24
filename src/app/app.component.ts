@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   title = 'frontend-test';
-  themes = [];
+  darkTheme: boolean;
   themeAplied: string;
   sidenavEvents: string[] = [];
   sidenavOpened = true;
@@ -19,8 +19,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     private cdRef: ChangeDetectorRef,
     private mediaObserver: MediaObserver
   ){
-    this.themes.push({ value: 'dark', text: 'dark-theme' });
-    this.themes.push({ value: 'light', text: 'light-theme' });
+    this.darkTheme = true;
     this.themeAplied = 'dark-theme';
   }
 
@@ -44,12 +43,14 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
 
   }
 
-  updateTheme($event): void {
-    console.log($event.value);
-    if ($event.value === 'dark') {
-      this.themeAplied = 'dark-theme';
-    } else if ($event.value === 'light') {
+  updateTheme(): void {
+    if (this.darkTheme) {
+      this.darkTheme = false;
       this.themeAplied = 'light-theme';
+    }
+    else {
+      this.darkTheme = true;
+      this.themeAplied = 'dark-theme';
     }
   }
 }

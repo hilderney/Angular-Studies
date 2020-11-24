@@ -15,56 +15,51 @@
         <div class="col-12 col-sm-9 col-lg-10">
           <mat-form-field *ngFor="let item of inputs" class="input-number d-inline-flex px-2" appearance="fill">
             <mat-label> {{item.label}} </mat-label>
-            <input matInput type="number">
+            <input matInput type="number" value="1">
           </mat-form-field>
 
-          <button mat-mini-fab class="btn-increment px-1 mb-3" style="bottom: 8px;"
-            (click)="buildNewInput()" aria-label="Add">
+          <button mat-mini-fab class="btn-increment px-1 mb-3" style="bottom: 8px;" (click)="buildNewInput()" aria-label="Add">
             <mat-icon> add </mat-icon>
           </button>
         </div> <!-- ./COL -->
-    </div> <!-- ./ROW -->
+      </div> <!-- ./ROW -->
 
-    <div class="row">
-      <div class="col-12 col-sm-3 col-lg-2" >
-        <span class="left-label"> Target: </span>
-      </div> <!-- ./COL -->
+      <div class="row">
+        <div class="col-12 col-sm-3 col-lg-2" >
+          <span class="left-label"> Target: </span>
+        </div> <!-- ./COL -->
 
-      <div class="col-12 col-sm-9 col-lg-10" >
-        <mat-form-field class="input-number d-inline-flex px-2" appearance="fill">
-          <input matInput type="number" plac>
-        </mat-form-field>
-      </div> <!-- ./COL -->
-    </div> <!-- ./ROW -->
+        <div class="col-12 col-sm-9 col-lg-10" >
+          <mat-form-field class="input-number d-inline-flex px-2" appearance="fill">
+            <input matInput type="number">
+          </mat-form-field>
+        </div> <!-- ./COL -->
+      </div> <!-- ./ROW -->
 
-    <div class="row">
-      <div class="col-12" >
-        <div>
-          <button mat-button (click)="clearNumbers()" style="background-color: transparent;">Limpar Campos</button>
-          <button mat-flat-button (click)="combineNumbers()">Combinar</button>
-        </div>
+      <div class="row">
+        <div class="col-12" >
+          <div class="float-right">
+            <button mat-button (click)="clearNumbers()" style="background-color: transparent;">Limpar Campos</button>
+            <button mat-flat-button (click)="combineNumbers()">Combinar</button>
+          </div>
 
-      </div> <!-- ./COL -->
-    </div> <!-- ./ROW -->
+        </div> <!-- ./COL -->
+      </div> <!-- ./ROW -->
 
+    </mat-card-content>
+  </mat-card>
 
+  <mat-card fxFlex="100%">
+    <mat-card-title>
+      Combionações Possíveis
+    </mat-card-title>
+    <mat-card-content>
 
+      <mat-form-field *ngFor="let item of inputsResult" class="input-result d-inline-flex px-2">
+        <input matInput type="number" value="{{item}}">
+      </mat-form-field>
 
-  </mat-card-content>
-</mat-card>
-
-<mat-card fxFlex="100%">
-  <mat-card-title>
-    Combionações Possíveis
-  </mat-card-title>
-  <mat-card-content>
-
-    <mat-form-field *ngFor="let item of inputsResult" class="input-result d-inline-flex px-2">
-      <mat-label> &nbsp; </mat-label>
-      <input matInput type="number" readonly value="{{item}}">
-    </mat-form-field>
-
-  </mat-card-content>
-</mat-card>
+    </mat-card-content>
+  </mat-card>
 
 </div>

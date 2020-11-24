@@ -27,4 +27,16 @@
   .left-label {
     float: left !important;
   }
+
+
+  mat-sidenav {
+    width: 100%;
+    position: fixed !important;
+    min-height: 580px;
+  }
+
+  mat-sidenav-content {
+    margin-left: 0 !important;
+
+  }
 }
