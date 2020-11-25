@@ -21,14 +21,15 @@ export class FormFieldComponent implements OnInit {
   }
 
   buildNewInput(){
-    // console.log(this.inputs.length);
     if (this.inputs.length >= 0 && this.inputs.length < 8) {
       const index = this.inputs.length;
+
       const input: IInputNumber = {
         label: this.nextName(this.inputs.length + 1),
         index: this.inputs.length - 1,
         value: 1
-      }
+      };
+
       this.inputs.push(input);
       this.inputsResult.push(
         {
@@ -37,13 +38,13 @@ export class FormFieldComponent implements OnInit {
           value: 0
         }
       );
+
     } else {
       alert('Sequência aceita apenas de 2 a 9 itens');
     }
   }
 
   removeLastInput(){
-    // console.log(this.inputs.length);
     if (this.inputs.length > 2 && this.inputs.length < 9) {
       this.inputs.pop();
       this.inputsResult.pop();
@@ -133,6 +134,7 @@ export class FormFieldComponent implements OnInit {
 
     if (resultados.length === 0){
       alert('Não há resultados para a sequência passada');
+      return null;
     }
 
     // randomizing results to show
