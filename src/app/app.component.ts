@@ -49,12 +49,12 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
         if (change.mqAlias === 'xs' || change.mqAlias === 'sm'){
           this.sidenavOpened = false;
           this.sidenavMobile = true;
-          this.sidenavStyle = 'over'
+          this.sidenavStyle = 'over';
           this.sidenavToogleBtn = true;
         } else {
           this.sidenavOpened = true;
           this.sidenavMobile = false;
-          this.sidenavStyle = 'side'
+          this.sidenavStyle = 'side';
           this.sidenavToogleBtn = false;
         }
       }

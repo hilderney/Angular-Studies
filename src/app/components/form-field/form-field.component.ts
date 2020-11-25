@@ -9,31 +9,63 @@ import { IInputNumber } from './inputNumber';
 export class FormFieldComponent implements OnInit {
 
   inputs: IInputNumber[];
-  inputsResult: number[];
+  inputsResult: IInputNumber[];
   sameVal: boolean;
   targetSum: number;
+  teste: [];
 
-  constructor() {
-    this.inputs = [ { label: "Primeiro" }];
-    this.inputsResult = [1];
-    this.sameVal = false;
-    this.targetSum = 1;
-   }
+  constructor() {}
 
   ngOnInit() {
-    this.buildNewInput();
+    this.clearNumbers();
   }
 
   buildNewInput(){
     // console.log(this.inputs.length);
     if (this.inputs.length >= 0 && this.inputs.length < 8) {
-      let input = {
-        label: this.nextName(this.inputs.length + 1)
+      const index = this.inputs.length;
+      const input: IInputNumber = {
+        label: this.nextName(this.inputs.length + 1),
+        index: this.inputs.length - 1,
+        value: 1
       }
       this.inputs.push(input);
-      this.inputsResult.push(this.inputs.length);
+      this.inputsResult.push(
+        {
+          label: '',
+          index: this.inputs.length - 1,
+          value: 0
+        }
+      );
     } else {
       alert('Sequência aceita apenas de 2 a 9 itens');
+    }
+  }
+
+  removeLastInput(){
+    // console.log(this.inputs.length);
+    if (this.inputs.length > 2 && this.inputs.length < 9) {
+      this.inputs.pop();
+      this.inputsResult.pop();
+    } else {
+      alert('Sequência aceita apenas de 2 a 9 itens');
+    }
+  }
+
+  updateInputsValue(i: number, value: number) {
+    this.inputs[i].value = Number(value);
+  }
+
+  updateResultsValue(arr: number[]) {
+    this.inputsResult = [];
+    for (let i = 0; i < arr.length; i++){
+      this.inputsResult.push(
+        {
+          label: '',
+          index: i,
+          value: arr[i]
+        }
+      );
     }
   }
 
@@ -58,71 +90,123 @@ export class FormFieldComponent implements OnInit {
   }
 
   combineNumbers() {
-    // console.log('Combinar Numeros');
     this.start();
   }
 
   clearNumbers() {
-    // console.log('Limpar Numeros');
+    this.inputs = [
+      {
+        label: 'Primeiro',
+        index: 0,
+        value: 1
+      },
+      {
+        label: 'Segundo',
+        index: 0,
+        value: 1
+      }
+    ];
+    this.inputsResult = [
+      {
+        label: '',
+        index: 0,
+        value: 0
+      },
+      {
+        label: '',
+        index: 0,
+        value: 0
+      }
+    ];
+    this.sameVal = false;
+    this.targetSum = 1;
   }
 
   // Subset
   start() {
-    let sameVal = true;
-    let resposta = this.subSetSum(this.inputsResult, this.targetSum, this.sameVal);
-    // console.log('Percorreu um total de: ', resposta.length, ' possibilidades');
-    // console.log('Quantidade de Respostas: ', resposta.length);
-    // console.log('Exemplo: ', resposta[resposta.length/2]);
-    // console.log('Resultados: ', resposta);
+    const sequences: number[] = [];
+    this.inputs.forEach( (e) => {
+      sequences.push(Number(e.value));
+    });
+
+    const resultados = this.subSetSum(sequences, this.targetSum, this.sameVal);
+
+    if (resultados.length === 0){
+      alert('Não há resultados para a sequência passada');
+    }
+
+    // randomizing results to show
+    const random = Math.floor(Math.random() * (resultados.length - 1)) + 0;
+
+    this.updateResultsValue(resultados[Math.floor(random)]);
   }
 
-  private subSetSum(nums: number[], sum: number, sameVal:boolean) {
-    debugger;
-    let results = [];
+  private subSetSum(nums: number[], sum: number, sameVal: boolean) {
+    const results = [];
     let full = [];
     let size = 0;
 
+    // In case of repeating same value until reaches the size of the sequence numbers
     if (sameVal){
-        if (nums.length > 4) {
+        if (nums.length > 4) { // Keeping the possibilities low for avoid crashing
             alert('Combinação muito grande para verificação, escolha apenas 4 digitos');
             return null;
         }
         nums.forEach(e => {
             for (let i = 0; i < nums.length; i++) {
-                if ((e * i + e) <= sum)
-                    full.push(e);
+                if ((e * i + e) <= sum){
+                    full.push(e); // Only keeping the results witch multiples are lower then the target, for inproved performance
+                }
             }
         });
     }
     else {
         full = nums;
     }
-    console.log(full);
-    for (let subset of subSets(full)) {
+
+    // console.log(full);
+
+    // Generator Function that get all the combinations possibles
+    for (const subset of subSets(full)) {
         size++;
     }
-    function* subSets(arr, offset = 0) {
+    function* subSets(arr: number[], offset = 0) {
     while (offset < arr.length) {
-        let first = arr[offset++];
-        let next = arr[offset + 1];
+        const first = arr[offset++];
         if (first <= sum) {
-            for (let subSet of subSets(arr, offset)) {
+            for (const subSet of subSets(arr, offset)) {
                 subSet.push(first);
                 yield subSet;
-                if (subSet.reduce((t, n) => { return t + n; }) == sum){
-                    results.push(subSet);
-                    //console.log(`found in ${size}`);
+                if (subSet.reduce((t: number, n: number) => t + n) === sum){
+                    results.push(subSet); // keeping only the values which the sum are equals to target, for inproved performance
                 }
             }
         }
     }
     yield [];
     }
-    let set: any = new Set(results.map(() => { JSON.stringify }));
-    let resultCleared: any = Array.from(set).map(() => { JSON.parse });
-    // console.log(`total : ${size}`);
-    console.log(`result : ${results.sort()}`);
+
+    // const resultCleared = [...new Set(results)];
+    // Reducing results with Plain Old JavaScript Object (POJO)
+    const unique = (arr: number[]) => {
+      const uniquesArr = [];
+      const found = {};
+      for (const i of arr) {
+          const str = JSON.stringify(i);
+          if (found[str]) {
+             continue;
+          }
+          uniquesArr.push(i);
+          found[str] = true;
+      }
+      return uniquesArr;
+    };
+
+    const resultCleared = unique(results);
+
+    // console.log(`result :`, results.sort());
+    // console.log(`resultCleared :`, resultCleared.sort());
+
     return resultCleared.sort();
   }
-
 }
