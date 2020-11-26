@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+
 import { IInputNumber } from './inputNumber';
 
 @Component({
@@ -40,7 +43,17 @@ export class FormFieldComponent implements OnInit {
       );
 
     } else {
-      alert('Sequência aceita apenas de 2 a 9 itens');
+
+      Swal.fire({
+        position: 'top-end',
+        icon: 'warning',
+        title: 'Deve ter entre 2 a 8 números na sequências',
+        backdrop: false,
+        showCancelButton: true,
+        timerProgressBar: true,
+        timer: 2500
+      });
+
     }
   }
 
@@ -49,7 +62,15 @@ export class FormFieldComponent implements OnInit {
       this.inputs.pop();
       this.inputsResult.pop();
     } else {
-      alert('Sequência aceita apenas de 2 a 9 itens');
+      Swal.fire({
+        position: 'top-end',
+        icon: 'warning',
+        title: 'Deve ter entre 2 a 8 números na sequências',
+        backdrop: false,
+        showCancelButton: true,
+        timerProgressBar: true,
+        timer: 2500
+      });
     }
   }
 
@@ -90,11 +111,44 @@ export class FormFieldComponent implements OnInit {
     }
   }
 
+  checkAlertMultProc(){
+    if (this.sameVal){
+      if (this.inputs.length > 4) {
+        Swal.fire({
+          position: 'top-end',
+          title: 'Combinação muito grande, escolha no máximo 4 sequências numéricas para multiplicidade numérica',
+          backdrop: false,
+          showCancelButton: true,
+          timerProgressBar: true,
+          timer: 3500
+        });
+      }
+    }
+  }
+
+  checkAlertSumProc(){
+    const sequences: number[] = [];
+    this.inputs.forEach( (e) => {
+      sequences.push(Number(e.value));
+    });
+    if (this.targetSum > (sequences.reduce((a, b) => a + b, 0) * 2)) {
+      Swal.fire({
+        position: 'top-end',
+        title: 'Quanto maior o valor do Target em relação a soma das sequências, maior a chance de não encontrar nenhum resultado',
+        backdrop: false,
+        showCancelButton: true,
+        timerProgressBar: true,
+        timer: 3500
+      });
+    }
+  }
+
   combineNumbers() {
     this.start();
   }
 
   clearNumbers() {
+
     this.inputs = [
       {
         label: 'Primeiro',
@@ -133,7 +187,16 @@ export class FormFieldComponent implements OnInit {
     const resultados = this.subSetSum(sequences, this.targetSum, this.sameVal);
 
     if (resultados.length === 0){
-      alert('Não há resultados para a sequência passada');
+
+      Swal.fire({
+        position: 'top-end',
+        icon: 'error',
+        title: 'Nenhum resultado encontrado',
+        backdrop: false,
+        showCancelButton: true,
+        timerProgressBar: true,
+        timer: 2000
+      })
       return null;
     }
 
@@ -151,7 +214,17 @@ export class FormFieldComponent implements OnInit {
     // In case of repeating same value until reaches the size of the sequence numbers
     if (sameVal){
         if (nums.length > 4) { // Keeping the possibilities low for avoid crashing
-            alert('Combinação muito grande para verificação, escolha apenas 4 digitos');
+
+            Swal.fire({
+              position: 'top-end',
+              icon: 'warning',
+              title: 'Combinação muito grande, escolha no máximo 4 sequências numéricas',
+              backdrop: false,
+              showCancelButton: true,
+              timerProgressBar: true,
+              timer: 3500
+            });
+
             return null;
         }
         nums.forEach(e => {

@@ -2,7 +2,7 @@
 
   <mat-card fxFlex="100%">
     <mat-card-title>
-      Teste Titulo
+      Teste Audaces
     </mat-card-title>
     <mat-card-content>
 
@@ -42,12 +42,12 @@
 
         <div class="col-12 col-sm-9 col-lg-10" >
           <mat-form-field class="input-number d-inline-flex px-2" appearance="fill">
-            <input matInput [(ngModel)]="targetSum" type="number" value="1" min="1" max="99">
+            <input matInput [(ngModel)]="targetSum" (change)="checkAlertSumProc()" type="number" value="1" min="1" max="99">
           </mat-form-field>
         </div> <!-- ./COL -->
 
         <div class="col-12 col-sm-9 col-lg-10 offset-sm-3 offset-lg-2" >
-          <mat-checkbox [(ngModel)]="sameVal" class="input-checkbox"> Incluir multiplicidade de valores? </mat-checkbox>
+          <mat-checkbox [(ngModel)]="sameVal" (change)="checkAlertMultProc()" class="input-checkbox"> Incluir multiplicidade de valores? </mat-checkbox>
         </div> <!-- ./COL -->
       </div> <!-- ./ROW -->
 
