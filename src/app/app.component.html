@@ -1,5 +1,4 @@
 <div class="content-wrapper {{themeAplied}}">
-
   <mat-sidenav-container class="container p-0" [hasBackdrop]="sidenavMobile">
     <mat-sidenav #sidenav mode="side"
       [(opened)]="sidenavOpened"
@@ -25,7 +24,7 @@
 
       <div fxLayout="column" fxFlex="75%" fxFlex.xs="100%" fxFlex.sm="100%" fxFlex.md="100%" >
 
-        <button mat-raised-button fxHide fxHide.xs="false" fxHide.sm="false" (click)="sidenav.toggle()">
+        <button mat-raised-button fxHide fxHide.xs="false" fxHide.sm="false" (click)="sidenav.toggle()" style="margin-left: -12px; border-radius: 0">
           <mat-icon> menu </mat-icon>
         </button>
 

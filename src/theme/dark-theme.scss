@@ -86,7 +86,6 @@ $frontend-test-dark-theme: mat-dark-theme((
   .mat-raised-button,
   .mat-fab,
   .mat-mini-fab {
-
     background-color: #ff96c7 !important;
     color:  #292929 !important;
   }
@@ -95,12 +94,21 @@ $frontend-test-dark-theme: mat-dark-theme((
   .nav-menu .nav-item {
     background-color: transparent;
     transition: background-color .25s ease-in-out;
-    padding-left: 32px;
+    color: #acacac;
   }
+
 
   .nav-menu .nav-item.active {
     background-color: #ffb7d933;
     transition: background-color .25s ease-in-out;
+  }
+
+  .nav-menu .nav-item label {
+    color: #acacac;
+  }
+
+  .nav-menu .nav-item.active,
+  .nav-menu .nav-item.active label{
     color: #ff96c7;
   }
 
@@ -111,7 +119,11 @@ $frontend-test-dark-theme: mat-dark-theme((
 
   .mat-drawer {
     background-color: #2f2f2f !important;
-    color: white;
+    color: #acacac;
+  }
+
+  .mat-drawer .light {
+    color: #E4E4E4;
   }
 
   .mat-drawer-side{

@@ -70,7 +70,7 @@
     </mat-card-title>
     <mat-card-content>
 
-      <mat-form-field *ngFor="let item of inputsResult; let i = index;" class="input-result d-inline-flex px-2">
+      <mat-form-field *ngFor="let item of inputsResult; let i = index;" class="input-result d-inline-flex px-2" appearance="fill">
         <input matInput type="number" [(ngModel)]="inputsResult[i].value" value="{{item.value}}">
       </mat-form-field>
 

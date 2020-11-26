@@ -15,10 +15,11 @@ $frontend-test-light-theme: mat-light-theme((
 
   mat-sidenav {
     background-color: #2F2F2F !important;
+    box-shadow: 0px 3px 12px #00000029;
   }
 
   .mat-drawer-container {
-    background-color: transparent !important;
+    background-color: #fff !important;
   }
 
   .mat-form-field-flex,
@@ -26,11 +27,10 @@ $frontend-test-light-theme: mat-light-theme((
   .mat-icon-button,
   .mat-stroked-button {
     color: #e4e4e4;
-
   }
 
   .mat-form-field-flex {
-    background-color: #292929 !important;
+    background-color: #EAEAEA !important;
   }
 
   .mat-button,
@@ -39,8 +39,12 @@ $frontend-test-light-theme: mat-light-theme((
   }
 
   mat-card {
-    background-color: #2f2f2f !important;
-    color: #e4e4e4 !important;
+    background-color: #fff !important;
+    color: #000000BF !important;
+  }
+
+  mat-card.no-shadow{
+    box-shadow: none;
   }
 
   .mat-button.mat-primary,
@@ -51,7 +55,7 @@ $frontend-test-light-theme: mat-light-theme((
 
   label,
   .mat-form-field-label-wrapper {
-    color:  #e4e4e4;
+    color:  #000000BF;
   }
 
   .mat-form-field.mat-focused .mat-form-field-label {
@@ -78,19 +82,21 @@ $frontend-test-light-theme: mat-light-theme((
   .mat-raised-button.mat-accent,
   .mat-fab.mat-accent,
   .mat-mini-fab.mat-accent {
-    background-color: #292929 !important;
-    color:  #e4e4e4 !important;
+    background-color: #eaeaea !important;
+    color:  #000 !important;
+  }
+
+  button.light mat-icon {
+    color: #FF96C7;
   }
 
   .mat-flat-button,
   .mat-raised-button,
   .mat-fab,
   .mat-mini-fab {
-
-    background-color: #ff96c7 !important;
-    color:  #292929 !important;
+    background-color: #e63a8a !important;
+    color:  #fff !important;
   }
-
 
   .nav-menu .nav-item {
     background-color: transparent;
@@ -101,7 +107,7 @@ $frontend-test-light-theme: mat-light-theme((
   .nav-menu .nav-item.active {
     background-color: #ffb7d933;
     transition: background-color .25s ease-in-out;
-    color: #E63A8A;
+    color: #e63a8a;
   }
 
   .nav-menu .nav-item:hover{
@@ -110,16 +116,23 @@ $frontend-test-light-theme: mat-light-theme((
   }
 
   .mat-drawer {
-    background-color: #2f2f2f !important;
-    color: white;
+    background-color: #fff !important;
+    color: #000000bf;
   }
 
   .mat-drawer-side{
     border: none;
   }
+
+  .brand-holder img {
+    filter: invert(79%) sepia(13%) saturate(5866%) hue-rotate(-62deg) brightness(173%) contrast(95%)
+  }
+
+  input {
+    color: #000 !important;
+  }
 }
 
 .light-theme.content-wrapper {
-  background-color: #292929;
-  color: #e4e4e4;
+  background-color: #fff;
 }
